@@ -69,10 +69,7 @@ class HTMLImgElement(HTMLElement):
     # BEGIN (write your solution here)
     def is_valid(self):
         img_attr = self.get_attribute_names()
-        for attr in self.attributes:
-            if attr not in img_attr:
-                return False
-        return True
+        return all(map(lambda x: x in img_attr, self.get_attributes()))
     # END
 
 
